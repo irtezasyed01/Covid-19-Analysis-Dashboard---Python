@@ -1,0 +1,10 @@
+runtime: python39  # or python38 if you're using Python 3.8
+entrypoint: waitress-serve --port=$PORT app:app.server
+
+
+handlers:
+  - url: /datasets
+    static_dir: datasets
+
+  - url: /.*
+    script: auto
